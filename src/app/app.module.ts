@@ -9,12 +9,14 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MaterialModule} from './material';
+import { DataTable2 } from './data-table2/data-table2.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    DataTable
+    DataTable,
+    DataTable2
   ],
   imports: [
     BrowserModule,
