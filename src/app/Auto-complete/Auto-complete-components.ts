@@ -7,9 +7,9 @@ import {map, startWith} from 'rxjs/operators';
  * @title Filter autocomplete
  */
 @Component({
-  selector: 'Auto-complete-components',
-  templateUrl: 'Auto-complete-components.html',
-  styleUrls: ['Auto-complete-components.css'],
+  selector: 'auto-complete-components',
+  templateUrl: 'Auto-complete-compoments.html',
+  styleUrls: ['Auto-complete-components.scss'],
 })
 export class AutocompleteFilterExample implements OnInit {
   myControl = new FormControl();

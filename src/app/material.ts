@@ -1,4 +1,5 @@
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import {MatInputModule} from '@angular/material';
 import { NgModule } from '@angular/core';
 import {MatTableModule} from '@angular/material/table';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -17,7 +18,8 @@ import {MatSelectModule} from '@angular/material/select';
      MatExpansionModule,
      MatTabsModule,
      MatSelectModule,
-     MatAutocompleteModule
+     MatAutocompleteModule,
+     MatInputModule
     ],
   exports: [MatButtonModule,
      MatCheckboxModule,
