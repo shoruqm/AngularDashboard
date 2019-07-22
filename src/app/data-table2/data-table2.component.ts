@@ -6,7 +6,7 @@ import {MatTableDataSource} from '@angular/material/table';
  * @title Table with pagination
  */
 @Component({
-  selector: 'app-data-table',
+  selector: 'app-data-table2',
   styleUrls: ['data-table2.component.scss'],
   templateUrl: 'data-table2.component.html',
 })
