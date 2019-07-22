@@ -8,8 +8,9 @@ import {MatIconModule} from '@angular/material/icon';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTabsModule } from '@angular/material/tabs';
 import {MatSelectModule} from '@angular/material/select';
+import {MatDialogModule} from '@angular/material/dialog';
 @NgModule({
-  imports: [MatButtonModule, MatCheckboxModule,MatTableModule,MatToolbarModule,MatIconModule,MatExpansionModule,MatTabsModule,MatSelectModule],
-  exports: [MatButtonModule, MatCheckboxModule,MatTableModule,MatToolbarModule,MatIconModule,MatExpansionModule,MatTabsModule,MatSelectModule],
+  imports: [MatButtonModule, MatCheckboxModule,MatTableModule,MatToolbarModule,MatIconModule,MatExpansionModule,MatTabsModule,MatSelectModule,MatDialogModule],
+  exports: [MatButtonModule, MatCheckboxModule,MatTableModule,MatToolbarModule,MatIconModule,MatExpansionModule,MatTabsModule,MatSelectModule,MatDialogModule],
 })
 export class MaterialModule { }
