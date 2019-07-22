@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,6 +13,8 @@ import {MaterialModule} from './material';
 import { DataTable2 } from './data-table2/data-table2.component';
 import { DilaogExampleComponent } from './dilaog-example/dilaog-example.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { AutocompleteFilterExample } from './Auto-complete/Auto-complete-components';
+import { MatInputModule } from '@angular/material';
 
 
 @NgModule({
@@ -19,15 +22,19 @@ import { MatDialogModule } from '@angular/material/dialog';
     AppComponent,
     DataTable,
     DataTable2,
-    DilaogExampleComponent
+    DilaogExampleComponent,
+    AutocompleteFilterExample
   ],
   entryComponents:[DilaogExampleComponent],
 
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     MatTableModule,
     MatDialogModule,
+    MatInputModule,
     MatPaginatorModule,
     MatSortModule,
     BrowserAnimationsModule,
