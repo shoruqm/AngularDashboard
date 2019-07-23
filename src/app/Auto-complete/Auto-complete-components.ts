@@ -29,6 +29,11 @@ export class AutocompleteFilterExample implements OnInit {
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
 
-    return this.data.filter(option => option.item.toLowerCase().includes(filterValue)).map(option => option.item);
+    return this.data.filter((element) => {
+      return element.item.toLowerCase().includes(filterValue)
+        || element.type.toLowerCase().includes(filterValue);
+    }).map((element) => {
+      return element.item;
+    });
   }
 }
