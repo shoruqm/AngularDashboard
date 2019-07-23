@@ -4,9 +4,9 @@
   <mat-toolbar-row>
     <span>Dashboard</span>
     <span class="example-spacer"></span>
-    <auto-complete-components></auto-complete-components>
+    <auto-complete-components [data]="data"></auto-complete-components>
     <mat-icon class="example-icon" aria-hidden="false" aria-label="Example delete icon">search</mat-icon>
   </mat-toolbar-row>
 </mat-toolbar>
 
-<app-data-table></app-data-table>
+<app-data-table [data]="data" (getNextPage)="getNextPage($event)"></app-data-table>
