@@ -10,7 +10,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MaterialModule} from './material';
-import { DataTable2 } from './data-table2/data-table2.component';
+//import { DataTable2 } from './data-table2/data-table2.component';
 import { DilaogExampleComponent } from './dilaog-example/dilaog-example.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AutocompleteFilterExample } from './Auto-complete/Auto-complete-components';
@@ -21,7 +21,7 @@ import { MatInputModule } from '@angular/material';
   declarations: [
     AppComponent,
     DataTable,
-    DataTable2,
+    //DataTable2,
     DilaogExampleComponent,
     AutocompleteFilterExample
   ],

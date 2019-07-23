@@ -1,12 +1,110 @@
-<table mat-table [dataSource]="elementData">
-    <!-- Name Column -->
-    <ng-container matColumnDef="Name">
-        <th mat-header-cell *matHeaderCellDef> Name </th>
-        <td mat-cell *matCellDef="let element"> {{element.item}} </td>
-    </ng-container>
+<div mat-dialog-container >
+        <h2 mat-dialog-title> more info</h2>
+<table mat-table [dataSource]="elementData" style="width: 250%" >
+    
+     <!-- desc Column -->
+     <ng-container matColumnDef="desc">
+            <th mat-header-cell *matHeaderCellDef> desc </th>
+            <td mat-cell *matCellDef="let element"> {{element.desc}} </td>
+          </ng-container>
+    
+     <!-- impact Column -->
+     <ng-container matColumnDef="impact">
+            <th mat-header-cell *matHeaderCellDef> impact </th>
+            <td mat-cell *matCellDef="let element"> {{element.impact}} </td>
+        </ng-container>
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        <!-- proponent Column -->
+     <ng-container matColumnDef="proponent">
+            <th mat-header-cell *matHeaderCellDef> proponent </th>
+            <td mat-cell *matCellDef="let element"> {{element.proponent}} </td>
+        </ng-container>
+
+         <!-- ispro Column -->
+     <ng-container matColumnDef="ispro">
+            <th mat-header-cell *matHeaderCellDef> ispro </th>
+            <td mat-cell *matCellDef="let element"> {{element.ispro}} </td>
+        </ng-container>
+        
+        <!-- fund Column -->
+     <ng-container matColumnDef="fund">
+            <th mat-header-cell *matHeaderCellDef> fund </th>
+            <td mat-cell *matCellDef="let element"> {{element.fund}} </td>
+        </ng-container>
+        
+         <!-- theme Column -->
+     <ng-container matColumnDef="theme">
+            <th mat-header-cell *matHeaderCellDef> theme </th>
+            <td mat-cell *matCellDef="let element"> {{element.theme}} </td>
+        </ng-container>
+        
+         <!-- start Column -->
+     <ng-container matColumnDef="start">
+            <th mat-header-cell *matHeaderCellDef> start </th>
+            <td mat-cell *matCellDef="let element"> {{element.start}} </td>
+        </ng-container>
+        
+         <!-- end Column -->
+     <ng-container matColumnDef="end">
+            <th mat-header-cell *matHeaderCellDef> end </th>
+            <td mat-cell *matCellDef="let element"> {{element.end}} </td>
+        </ng-container>
+
+        <!-- cost Column -->
+     <ng-container matColumnDef="cost">
+            <th mat-header-cell *matHeaderCellDef> cost </th>
+            <td mat-cell *matCellDef="let element"> {{element.cost}} </td>
+        </ng-container>
+
+             <!-- NPV Column -->
+     <ng-container matColumnDef="NPV">
+            <th mat-header-cell *matHeaderCellDef> NPV </th>
+            <td mat-cell *matCellDef="let element"> {{element.NPV}} </td>
+        </ng-container>
+
+           <!-- NPVJ Column -->
+     <ng-container matColumnDef="NPVJ">
+            <th mat-header-cell *matHeaderCellDef> NPVJ </th>
+            <td mat-cell *matCellDef="let element"> {{element.NPVJ}} </td>
+        </ng-container>
+
+          <!-- DT Column -->
+     <ng-container matColumnDef="DT">
+            <th mat-header-cell *matHeaderCellDef> DT </th>
+            <td mat-cell *matCellDef="let element"> {{element.DT}} </td>
+        </ng-container>
+
+          <!-- BP Column -->
+     <ng-container matColumnDef="BP">
+            <th mat-header-cell *matHeaderCellDef> BP </th>
+            <td mat-cell *matCellDef="let element"> {{element.BP}} </td>
+        </ng-container>
+
+        <!-- demand Column -->
+     <ng-container matColumnDef="demand">
+            <th mat-header-cell *matHeaderCellDef> demand </th>
+            <td mat-cell *matCellDef="let element"> {{element.demand}} </td>
+        </ng-container>
+
+         <!-- note Column -->
+     <ng-container matColumnDef="note">
+            <th mat-header-cell *matHeaderCellDef> note </th>
+            <td mat-cell *matCellDef="let element"> {{element.note}} </td>
+        </ng-container>
+
+         <!-- update Column -->
+     <ng-container matColumnDef="update">
+            <th mat-header-cell *matHeaderCellDef> update </th>
+            <td mat-cell *matCellDef="let element"> {{element.update}} </td>
+        </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumn"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumn;"></tr>
 </table>
 
-
+</div>
+<div mat-dialog-actions>
+       
+       <button mat-raised-button matDialogClose>Cancel</button>
+      </div>
+      

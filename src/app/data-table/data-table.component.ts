@@ -1,11 +1,11 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild,Inject } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { MatDialog } from '@angular/material/dialog';
+
 import { DilaogExampleComponent } from 'src/app/dilaog-example/dilaog-example.component'
 import { PeriodicElement, ELEMENT_DATA } from '../models/PeriodicElement';
 
-
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 /**
  * @title Table with pagination
  */
@@ -16,7 +16,7 @@ import { PeriodicElement, ELEMENT_DATA } from '../models/PeriodicElement';
 })
 export class DataTable implements OnInit {
   item: string;
-  displayedColumns: string[] = ['position', 'item', 'type', 'division', 'CAD', 'actions'];
+  displayedColumns: string[] = ['position', 'item', 'type', 'division', 'CAD','status','actions'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
@@ -31,11 +31,12 @@ export class DataTable implements OnInit {
 
   openDialog(element: PeriodicElement) {
     this.dialog.open(DilaogExampleComponent, {
-      width: '450px',
-      height: '400px',
+      panelClass: 'my-full-screen-dialog',
       data: {
         element: element
       }
     });
   }
+  
+  
 }

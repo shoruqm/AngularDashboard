@@ -1,71 +1,47 @@
-import {Component, OnInit, ViewChild, Inject} from '@angular/core';
+/*import { Component, OnInit, ViewChild,Inject } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 
-import {MatPaginator} from '@angular/material/paginator';
-import {MatTableDataSource} from '@angular/material/table';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { DilaogExampleComponent } from 'src/app/dilaog-example/dilaog-example.component'
-export interface Periodic {
-  name:string;
-  age:number
+import { PeriodicElement, ELEMENT_DATA } from '../models/PeriodicElement';
 
-}
-const ELEMENT_DATA: Periodic[] = [
-  {name: "SH", age:12},
-  {name: "gg", age:4},
-  {name: "ggg", age:2},
- 
-  
-];
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+
 /**
  * @title Table with pagination
- */
+ 
 @Component({
   selector: 'app-data-table2',
   styleUrls: ['data-table2.component.scss'],
   templateUrl: 'data-table2.component.html',
 })
-export class DataTable2 {
-  
- 
-  displayedColumn: string[] = ['name', 'age'];
-  datasource = new MatTableDataSource<Periodic>(ELEMENT_DATA);
+export class DataTable2 implements OnInit {
+  item: string;
+  displayedColumn: string[] = ['desc','impact','proponent','ispro','fund','theme','start','end','cost','NPV','NPVJ','DT','BP','demand','note','update',];
+  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
 
-  constructor(public dialog: MatDialog) {}
+  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
-  openDialog(element){
-    const dialogRef = this.dialog.open(DilaogExampleComponent, {
-      width: '350px',
-      height: '300px',
-      data: {name: element.name, age: element.age}
+  ngOnInit() {
+    this.dataSource.paginator = this.paginator;
+
+  }
+
+  constructor(public dialog: MatDialog) { }
+
+
+  openDialog(element: PeriodicElement) {
+    this.dialog.open(DilaogExampleComponent, {
+      width: '450px',
+      height: '400px',
+      data: {
+        element: element
+      }
     });
   }
-  //iscollapsed:boolean = true;
-
-  //@ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
-/*toggleCollapsed(){
-  this.iscollapsed = !this.iscollapsed;
-}*/
- /* ngOnInit() {
-    //this.datasource.paginator = this.paginator;
-  }*/
+  
   
 }
-@Component({
-  selector: 'app-data-table2',
-  templateUrl: 'data-table2.component.html',
-})
-export class DialogOverviewExampleDialog {
-
-  constructor(
-    public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
-    @Inject(MAT_DIALOG_DATA) public data: Periodic) {}
-
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
-
-}
-
-
+*/
 
 
