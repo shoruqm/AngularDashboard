@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import {MatDialog} from '@angular/material';
-import { DilaogExampleComponent } from './dilaog-example/dilaog-example.component';
+import { ELEMENT_DATA } from './models/PeriodicElement';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,5 +8,11 @@ import { DilaogExampleComponent } from './dilaog-example/dilaog-example.componen
 })
 export class AppComponent {
   title = 'Angular Project TEST';
-  constructor(public dilaog:MatDialog){}
+  data = ELEMENT_DATA;
+
+  constructor(){}
+
+  getNextPage(pageNumber: number) {
+    console.log('getting new page', pageNumber);
+  }
 }

@@ -15,6 +15,7 @@ import { DilaogExampleComponent } from './dilaog-example/dilaog-example.componen
 import { MatDialogModule } from '@angular/material/dialog';
 import { AutocompleteFilterExample } from './Auto-complete/Auto-complete-components';
 import { MatInputModule } from '@angular/material';
+import { SearchPipePipe } from './search-pipe.pipe';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { MatInputModule } from '@angular/material';
     DataTable,
     //DataTable2,
     DilaogExampleComponent,
-    AutocompleteFilterExample
+    AutocompleteFilterExample,
+    SearchPipePipe
   ],
   entryComponents:[DilaogExampleComponent],
 

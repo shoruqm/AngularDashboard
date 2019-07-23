@@ -1,7 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs';
-import {map, startWith} from 'rxjs/operators';
+import {map, startWith, debounceTime} from 'rxjs/operators';
+import { PeriodicElement } from '../models/PeriodicElement';
 
 /**
  * @title Filter autocomplete
@@ -12,14 +13,15 @@ import {map, startWith} from 'rxjs/operators';
   styleUrls: ['Auto-complete-components.scss'],
 })
 export class AutocompleteFilterExample implements OnInit {
+  @Input() data: PeriodicElement[];
   myControl = new FormControl();
-  options: string[] = ['One', 'Two', 'Three'];
   filteredOptions: Observable<string[]>;
 
   ngOnInit() {
     this.filteredOptions = this.myControl.valueChanges
       .pipe(
         startWith(''),
+        debounceTime(1000),
         map(value => this._filter(value))
       );
   }
@@ -27,6 +29,6 @@ export class AutocompleteFilterExample implements OnInit {
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
 
-    return this.options.filter(option => option.toLowerCase().includes(filterValue));
+    return this.data.filter(option => option.item.toLowerCase().includes(filterValue)).map(option => option.item);
   }
 }

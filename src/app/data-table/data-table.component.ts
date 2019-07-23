@@ -1,9 +1,9 @@
-import { Component, OnInit, ViewChild,Inject } from '@angular/core';
+import { Component, OnInit, ViewChild, Output, Input, EventEmitter } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 
 import { DilaogExampleComponent } from 'src/app/dilaog-example/dilaog-example.component'
-import { PeriodicElement, ELEMENT_DATA } from '../models/PeriodicElement';
+import { PeriodicElement } from '../models/PeriodicElement';
 
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 /**
@@ -15,13 +15,17 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
   templateUrl: 'data-table.component.html',
 })
 export class DataTable implements OnInit {
+  @Input() data: PeriodicElement[];
+  @Output() getNextPage: EventEmitter<number> = new EventEmitter<number>();
+
   item: string;
-  displayedColumns: string[] = ['position', 'item', 'type', 'division', 'CAD','status','actions'];
-  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+  displayedColumns: string[] = ['position', 'item', 'type', 'division', 'CAD', 'status', 'actions'];
+  dataSource: MatTableDataSource<PeriodicElement>;
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
   ngOnInit() {
+    this.dataSource = new MatTableDataSource<PeriodicElement>(this.data);
     this.dataSource.paginator = this.paginator;
 
   }
@@ -37,6 +41,8 @@ export class DataTable implements OnInit {
       }
     });
   }
-  
-  
+
+  callNextPage() {
+    this.getNextPage.emit(1);
+  }
 }
