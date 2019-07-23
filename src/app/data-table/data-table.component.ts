@@ -5,7 +5,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { DilaogExampleComponent } from 'src/app/dilaog-example/dilaog-example.component'
 import { PeriodicElement } from '../models/PeriodicElement';
 
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 /**
  * @title Table with pagination
  */
