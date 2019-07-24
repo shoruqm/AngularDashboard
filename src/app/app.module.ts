@@ -16,7 +16,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { AutocompleteFilterExample } from './Auto-complete/Auto-complete-components';
 import { MatInputModule } from '@angular/material';
 import { SearchPipePipe } from './search-pipe.pipe';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -41,6 +41,7 @@ import { SearchPipePipe } from './search-pipe.pipe';
     MatSortModule,
     BrowserAnimationsModule,
     MaterialModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
