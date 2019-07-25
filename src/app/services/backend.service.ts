@@ -6,12 +6,16 @@ import { PeriodicElement } from '../models/PeriodicElement';
   providedIn: 'root'
 })
 export class BackendService {
-  private _backendUrl = "https://reqres.in/api";
+  private _backendUrl = "http://localhost:3003";
 
   constructor(private _http: HttpClient) { }
   
   getData(page: number): Observable<PeriodicElement[]> {
-    return this._http.get<PeriodicElement[]>(this._backendUrl + "/users?page=" + page);
+    return this._http.get<PeriodicElement[]>(this._backendUrl + "/items/" + page);
+  }
+
+  getRow(id: number): Observable<PeriodicElement> {
+    return this._http.get<PeriodicElement>(this._backendUrl + "/items/" + id);
   }
 
   private handleError<T>(operation = 'operation', result?: T) {

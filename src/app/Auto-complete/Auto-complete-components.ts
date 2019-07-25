@@ -31,7 +31,7 @@ export class AutocompleteFilterExample implements OnInit {
 
     return this.data.filter((element) => {
       return element.item.toLowerCase().includes(filterValue)
-        || element.type.toLowerCase().includes(filterValue);
+        // || element.type.toLowerCase().includes(filterValue);
     }).map((element) => {
       return element.item;
     });

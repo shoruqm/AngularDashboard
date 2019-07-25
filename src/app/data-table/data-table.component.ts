@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, Output, Input, EventEmitter } from '@angular/core';
+import { Component, OnInit, ViewChild, Output, Input, EventEmitter, OnChanges } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 
@@ -14,7 +14,7 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['data-table.component.scss'],
   templateUrl: 'data-table.component.html',
 })
-export class DataTable implements OnInit {
+export class DataTable implements OnInit, OnChanges {
   @Input() data: PeriodicElement[];
   @Output() getNextPage: EventEmitter<number> = new EventEmitter<number>();
 
@@ -27,7 +27,10 @@ export class DataTable implements OnInit {
   ngOnInit() {
     this.dataSource = new MatTableDataSource<PeriodicElement>(this.data);
     this.dataSource.paginator = this.paginator;
+  }
 
+  ngOnChanges(changes) {
+    this.dataSource = new MatTableDataSource<PeriodicElement>(this.data);
   }
 
   constructor(public dialog: MatDialog) { }
@@ -36,6 +39,8 @@ export class DataTable implements OnInit {
   openDialog(element: PeriodicElement) {
     this.dialog.open(DilaogExampleComponent, {
       panelClass: 'my-full-screen-dialog',
+      width: '1000px',
+      height: '500px',
       data: {
         element: element
       }

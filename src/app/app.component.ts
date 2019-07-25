@@ -17,9 +17,10 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     // this.data = ELEMENT_DATA; // subscribe to observable from the service //testing
 
-    this.service.getData(2).subscribe(
+    this.service.getData(1).subscribe(
       data => {
         this.data = data;
+        console.log('got data', this.data);
       },
       /* data => {
         console.log('backend working', data);
