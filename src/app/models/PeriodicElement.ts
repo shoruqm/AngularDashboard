@@ -1,35 +1,36 @@
 export interface PeriodicElement {
+  No: number;
   item: string;
-  position: number;
-  type: string;
-  division: string;
-  CAD: string;
-  status: string;
-  details: string;
-  desc:string;
-  impact: string;
-  proponent: string;
-  ispro: string;
-  fund:string;
-  theme:string;
+  Description:string;
+  Impact_Remars_Comments: string;
+  Type: string;
+  Division: string;
+  Proponent: string;
+  is_Proponent_involve: string;
+  Fund_Source:string;
+  CAD_SME: string;
+  Theme:string;
   start:string;
   end:string;
   cost:number;
   NPV:string;
-  NPVJ:string;
-  DT: string;
-  BP: string;
-  demand: string;
-  note:string;
-  update:string;
+  NPV_Justification:string;
+  DT_Item: string;
+  BP_Item: string;
+  Demand: string;
+  Note:string;
+  Status: string;
+  Update:string;
+  details: string;
+
 }
 
 export const ELEMENT_DATA: PeriodicElement[] = [
-  { position: 1, item: '3D modeling Visualization using AR/VR', type: "AR/VR", division: 'BI & mobile App DIV', CAD : "M",status:"--", details: "",
-  desc:'hhh',impact:'N/A', proponent:'Project Managment Dep.', ispro:'hh', fund:'HR trans.', theme:'HR', start: 'jan-22', end:'Dec-23',cost:22,NPV:'44MM',NPVJ:'eee',DT:'yes', BP:'tttt', demand:'hh', note:'kgm',update:'gkkg'
+  { No: 1, item: '3D modeling Visualization using AR/VR', Type: "AR/VR", Division: 'BI & mobile App DIV', CAD_SME : "M",Status:"--", details: "",
+  Description:'hhh',Impact_Remars_Comments:'N/A', Proponent:'Project Managment Dep.', is_Proponent_involve:'hh', Fund_Source:'HR trans.', Theme:'HR', start: 'jan-22', end:'Dec-23',cost:22,NPV:'44MM',NPV_Justification:'eee',DT_Item:'yes', BP_Item:'tttt', Demand:'hh', Note:'kgm',Update:'gkkg'
 },
-  { position: 2, item: 'Anytime Learning through Mobile', type: "Mobility", division: 'Human Res & Payroll DIV', CAD: "O",status:"--", details: "",desc:'--',impact:'N/A', proponent:'Project Managment Dep.', ispro:'--', fund:'HR trans.', theme:'HR', start: 'jan-22', end:'Dec-23',cost:22,NPV:'44MM',NPVJ:'--',DT:'yes', BP:'--', demand:'--', note:'--',update:'--'},
-  { position: 3, item: 'Automate Admin Activities', type: "RPA", division: 'Human Res & Payroll DIV', CAD: "O",status:"--",details: "",desc:'--',impact:'N/A', proponent:'Project Managment Dep.', ispro:'--', fund:'HR trans.', theme:'HR', start: 'jan-22', end:'Dec-23',cost:22,NPV:'44MM',NPVJ:'--',DT:'yes', BP:'--', demand:'--', note:'--',update:'--'},
+  { No: 2, item: 'Anytime Learning through Mobile', Type: "Mobility", Division: 'Human Res & Payroll DIV', CAD_SME: "O",Status:"--", details: "",Description:'--',Impact_Remars_Comments:'N/A', Proponent:'Project Managment Dep.', is_Proponent_involve:'--', Fund_Source:'HR trans.', Theme:'HR', start: 'jan-22', end:'Dec-23',cost:22,NPV:'44MM',NPV_Justification:'--',DT_Item:'yes', BP_Item:'--', Demand:'--', Note:'--',Update:'--'},
+  { No: 3, item: 'Automate Admin Activities', Type: "RPA", Division: 'Human Res & Payroll DIV', CAD_SME: "O",Status:"--",details: "",Description:'--',Impact_Remars_Comments:'N/A', Proponent:'Project Managment Dep.', is_Proponent_involve:'--', Fund_Source:'HR trans.', Theme:'HR', start: 'jan-22', end:'Dec-23',cost:22,NPV:'44MM',NPV_Justification:'--',DT_Item:'yes', BP_Item:'--', Demand:'--', Note:'--',Update:'--'},
 ];
 
 
