@@ -1,12 +1,18 @@
-<mat-toolbar color="primary">
- 
-
+<mat-toolbar style="background-color:#000080; color:white">
   <mat-toolbar-row>
     <span>Dashboard</span>
     <span class="example-spacer"></span>
-    <auto-complete-components [data]="data"></auto-complete-components>
-    <mat-icon class="example-icon" aria-hidden="false" aria-label="Example delete icon">search</mat-icon>
+    <auto-complete-components *ngIf="selectedTrack" [data]="data"></auto-complete-components>
+    <button mat-flat-button class="buttonBack" *ngIf="selectedTrack" (click)="unselectTrack(track.id)">back</button>
   </mat-toolbar-row>
 </mat-toolbar>
 
-<app-data-table [data]="data" (getNextPage)="getNextPage($event)"></app-data-table>
+<div *ngIf="!selectedTrack">
+  <h1>Choose a Track</h1>
+  <div class="button-list">
+    <button mat-flat-button class="button" [ngClass]="'color'+track.id" *ngFor="let track of tracks" (click)="selectTrack(track.id)">{{track.name}}</button>
+  </div>
+</div>
+
+<app-data-table *ngIf="selectedTrack" [data]="data" (getNextPage)="getNextPage($event)"></app-data-table>
+
