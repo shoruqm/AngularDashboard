@@ -12,7 +12,7 @@ import { MatTableDataSource } from '@angular/material/table';
 export class DilaogExampleComponent implements OnInit {
 
   elementData: PeriodicElement[] = [];
-  displayedColumn: string[] = ['desc','impact','proponent','ispro','fund','theme','start','end','cost','NPV','NPVJ','DT','BP','demand','note','update'];
+  displayedColumn: string[] = ['Description',' Impact_Reamars_Comments','Proponent','is_Proponent_involve','Fund_Source','Theme','start','end','cost','NPV','NPV_Justification','DT_Item','BP_Item','Demand','Note','Update'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
   constructor(
     public dialogRef: MatDialogRef<DilaogExampleComponent>,

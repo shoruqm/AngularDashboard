@@ -10,12 +10,8 @@ export class BackendService {
 
   constructor(private _http: HttpClient) { }
   
-  getData(page: number): Observable<PeriodicElement[]> {
-    return this._http.get<PeriodicElement[]>(this._backendUrl + "/items/" + page);
-  }
-
-  getRow(id: number): Observable<PeriodicElement> {
-    return this._http.get<PeriodicElement>(this._backendUrl + "/items/" + id);
+  getData(page: number, itemType: string): Observable<PeriodicElement[]> {
+    return this._http.get<PeriodicElement[]>(this._backendUrl + "/items/" + page + "/" + itemType);
   }
 
   private handleError<T>(operation = 'operation', result?: T) {

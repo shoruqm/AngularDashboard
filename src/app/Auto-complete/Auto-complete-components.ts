@@ -30,10 +30,10 @@ export class AutocompleteFilterExample implements OnInit {
     const filterValue = value.toLowerCase();
 
     return this.data.filter((element) => {
-      return element.item.toLowerCase().includes(filterValue)
+      return element.Item.toLowerCase().includes(filterValue)
         // || element.type.toLowerCase().includes(filterValue);
     }).map((element) => {
-      return element.item;
+      return element.Item;
     });
   }
 }

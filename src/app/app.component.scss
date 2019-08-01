@@ -1,12 +1,16 @@
 .example-icon {
-    padding: 0 14px;
+    padding: 0 20px;
   }
-  
+  .toolbar{
+   padding: 4%;
+    background-color:#000080;
+  }
   .example-spacer {
     flex: 1 1 auto;
   }
   .buttonBack{
-    height: 100%
+   margin-bottom: 1px;
+   margin-left: 1%;
   }
   
 .button-list {

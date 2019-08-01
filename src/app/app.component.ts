@@ -15,16 +15,18 @@ export class AppComponent implements OnInit {
   tracks: {id: string, name: string}[] = [
     {id: '0', name: 'Advanced Analytics'},
     {id: '1', name: 'BlockChain'},
-    {id: '2', name: 'Mobility and AR/VR'},
-    {id: '3', name: 'Smart City'},
+    {id: '2', name: 'Mobility'},
+    {id: '3', name: 'RPA'},
     {id: '4', name: 'Smart Plant and IIoT'},
   ]
 
   constructor(private service: BackendService){}
 
   ngOnInit() {
+  }
 
-    this.service.getData(1).subscribe(
+  getData(track: string) {
+    this.service.getData(1, track).subscribe(
       data => {
         this.data = data;
         console.log('got data', this.data);
@@ -37,6 +39,7 @@ export class AppComponent implements OnInit {
 
   selectTrack(id: string) {
     this.selectedTrack = id;
+    this.getData(this.tracks.find(t => t.id == this.selectedTrack).name);
   }
 
   unselectTrack() {

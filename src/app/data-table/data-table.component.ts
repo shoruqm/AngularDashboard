@@ -18,8 +18,8 @@ export class DataTable implements OnInit, OnChanges {
   @Input() data: PeriodicElement[];
   @Output() getNextPage: EventEmitter<number> = new EventEmitter<number>();
 
-  item: string;
-  displayedColumns: string[] = ['position', 'item', 'type', 'division', 'CAD', 'status', 'actions'];
+  item: string; 
+  displayedColumns: string[] = ['No', 'Item', 'Type', 'Division', 'CAD_SME', 'Status', 'actions'];
   dataSource: MatTableDataSource<PeriodicElement>;
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
