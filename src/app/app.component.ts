@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
     {id: '1', name: 'BlockChain'},
     {id: '2', name: 'Mobility'},
     {id: '3', name: 'RPA'},
-    {id: '4', name: 'Smart Plant and IIoT'},
+    {id: '4', name: 'Smart Plant and IoT'},
   ]
 
   constructor(private service: BackendService){}

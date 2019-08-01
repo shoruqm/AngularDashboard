@@ -1,11 +1,11 @@
 <mat-toolbar class="toolbar" style=" color:white">
   <mat-toolbar-row>
     <span>Dashboard</span>
-    <mat-icon mat-flat-button class="buttonBack" *ngIf="selectedTrack" (click)="unselectTrack()">exit_to_app</mat-icon>
+    <mat-icon mat-flat-button class="buttonBack" *ngIf="selectedTrack" (click)="unselectTrack()">arrow_back</mat-icon>
     <span class="example-spacer"></span>
     <auto-complete-components *ngIf="selectedTrack" [data]="data"></auto-complete-components>
      <a aria-label="Example delete icon" class="example-icon"  >
-  <mat-icon  *ngIf="selectedTrack" aria-hidden="false">search</mat-icon></a>
+  <mat-icon  *ngIf="selectedTrack" aria-hidden="false" style="cursor:pointer">search</mat-icon></a>
     
    
   </mat-toolbar-row>
