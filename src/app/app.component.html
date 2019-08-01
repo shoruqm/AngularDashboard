@@ -18,5 +18,5 @@
   </div>
 </div>
 
-<app-data-table *ngIf="selectedTrack" [data]="data" (getNextPage)="getNextPage($event)"></app-data-table>
+<app-data-table *ngIf="selectedTrack" [type]="getTrackName()" [data]="data" (getNextPage)="getNextPage($event)"></app-data-table>
 

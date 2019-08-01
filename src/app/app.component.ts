@@ -13,11 +13,10 @@ export class AppComponent implements OnInit {
   data: PeriodicElement[];
 
   tracks: {id: string, name: string}[] = [
-    {id: '0', name: 'Advanced Analytics'},
-    {id: '1', name: 'BlockChain'},
-    {id: '2', name: 'Mobility'},
-    {id: '3', name: 'RPA'},
-    {id: '4', name: 'Smart Plant and IoT'},
+    {id: 'Mobility', name: 'Mobility'},
+    {id: 'RPA', name: 'RPA'},
+    {id: 'AR-VR', name: 'AR/VR'},
+    {id: 'Chatbot',name: 'Chatbot'}
   ]
 
   constructor(private service: BackendService){}
@@ -39,7 +38,11 @@ export class AppComponent implements OnInit {
 
   selectTrack(id: string) {
     this.selectedTrack = id;
-    this.getData(this.tracks.find(t => t.id == this.selectedTrack).name);
+    this.getData(this.selectedTrack);
+  }
+
+  getTrackName(): string {
+    return this.tracks.find(t => t.id == this.selectedTrack).name;
   }
 
   unselectTrack() {

@@ -16,6 +16,7 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class DataTable implements OnInit, OnChanges {
   @Input() data: PeriodicElement[];
+  @Input() type: string;
   @Output() getNextPage: EventEmitter<number> = new EventEmitter<number>();
 
   item: string; 
