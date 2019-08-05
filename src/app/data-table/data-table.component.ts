@@ -4,7 +4,7 @@ import { MatTableDataSource } from '@angular/material/table';
 
 import { DilaogExampleComponent } from 'src/app/dilaog-example/dilaog-example.component'
 import { PeriodicElement } from '../models/PeriodicElement';
-
+import {DilaogAddComponent} from 'src/app/dilaog-add/dilaog-add.component';
 
 import { MatDialog } from '@angular/material/dialog';
 import {  MatTable } from '@angular/material';
@@ -50,6 +50,14 @@ export class DataTable implements OnInit, OnChanges {
         element: element
       }
     });
+  }
+  openDialogg(){
+this.dialog.open(DilaogAddComponent,
+  {
+    panelClass: 'my-full-screen-dialog',
+      width: '1000px',
+      height: '500px',
+  })
   }
 
   callNextPage() {

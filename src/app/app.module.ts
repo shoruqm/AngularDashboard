@@ -29,7 +29,7 @@ import { DilaogAddComponent } from './dilaog-add/dilaog-add.component';
     SearchPipePipe,
     DilaogAddComponent
   ],
-  entryComponents:[DilaogExampleComponent],
+  entryComponents:[DilaogExampleComponent, DilaogAddComponent],
 
   imports: [
     BrowserModule,
