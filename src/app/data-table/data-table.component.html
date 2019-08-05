@@ -1,7 +1,8 @@
 
 
 <div class="mat-elevation-z8">
-  <table mat-table [dataSource]="dataSource">
+   <button mat-button (click)="openDialog('Add',{})" mat-flat-button color="primary">Add Row</button>
+  <table mat-table [dataSource]="dataSource" #mytable class="my-table mat-elevation-z8">
 
     <!-- NO Column -->
     <ng-container matColumnDef="No">

@@ -5,7 +5,9 @@ import { MatTableDataSource } from '@angular/material/table';
 import { DilaogExampleComponent } from 'src/app/dilaog-example/dilaog-example.component'
 import { PeriodicElement } from '../models/PeriodicElement';
 
+
 import { MatDialog } from '@angular/material/dialog';
+import {  MatTable } from '@angular/material';
 /**
  * @title Table with pagination
  */
@@ -24,7 +26,8 @@ export class DataTable implements OnInit, OnChanges {
   dataSource: MatTableDataSource<PeriodicElement>;
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
-
+  
+  @ViewChild(MatTable,{static:true}) table: MatTable<any>;
   ngOnInit() {
     this.dataSource = new MatTableDataSource<PeriodicElement>(this.data);
     this.dataSource.paginator = this.paginator;
@@ -35,6 +38,7 @@ export class DataTable implements OnInit, OnChanges {
   }
 
   constructor(public dialog: MatDialog) { }
+  
 
 
   openDialog(element: PeriodicElement) {
@@ -51,4 +55,8 @@ export class DataTable implements OnInit, OnChanges {
   callNextPage() {
     this.getNextPage.emit(1);
   }
+  
+  
+  
+
 }
