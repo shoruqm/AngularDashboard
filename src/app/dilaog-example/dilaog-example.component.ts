@@ -18,8 +18,6 @@ export class DilaogExampleComponent implements OnInit {
     public dialogRef: MatDialogRef<DilaogExampleComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) {
       this.elementData.push(data.element);
-
-      console.log('data', this.elementData);
     }
 
   ngOnInit() {

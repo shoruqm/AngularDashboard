@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { ELEMENT_DATA, PeriodicElement } from './models/PeriodicElement';
 
 import { BackendService } from './services/backend.service';
+import { MatDialog } from '@angular/material/dialog';
+import { DilaogAddComponent } from './dilaog-add/dilaog-add.component';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +21,7 @@ export class AppComponent implements OnInit {
     {id: 'Chatbot',name: 'Chatbot'}
   ]
 
-  constructor(private service: BackendService){}
+  constructor(private service: BackendService, public dialog: MatDialog, public ref: ChangeDetectorRef){}
 
   ngOnInit() {
   }
@@ -28,7 +30,6 @@ export class AppComponent implements OnInit {
     this.service.getData(1, track).subscribe(
       data => {
         this.data = data;
-        console.log('got data', this.data);
       },
       err => {
         console.error(err);
@@ -47,6 +48,35 @@ export class AppComponent implements OnInit {
 
   unselectTrack() {
     this.selectedTrack = '';
+  }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(DilaogAddComponent, {
+      panelClass: 'my-full-screen-dialog',
+      width: '1000px',
+      height: '500px',
+      data: {
+        Type: this.selectedTrack
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(
+      row => {
+        if (row) {
+          this.service.postRow(row).subscribe(
+            item => {
+              this.data.push(item);
+              this.ref.detectChanges();
+            },
+            err => {
+              console.error(err);
+            }
+          )
+        } else {
+          // close without data
+        }
+      }
+    )
   }
 
   getNextPage(pageNumber: number) {

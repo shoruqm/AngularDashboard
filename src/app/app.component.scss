@@ -8,11 +8,22 @@
   .example-spacer {
     flex: 1 1 auto;
   }
-  .buttonBack{
-   margin-top: 10%;
-   margin-left: 80%;
-   cursor: pointer;
+  .buttons-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    
+    padding-top: 15px;
+    padding-bottom: 15px;
+    
+    .buttonBack{
+      color: #000080;
+      cursor: pointer;
+    }
   }
+  
   
 .button-list {
   display: flex;

@@ -1,13 +1,11 @@
-import { Component, OnInit, ViewChild, Output, Input, EventEmitter, OnChanges } from '@angular/core';
+import { Component, OnInit, ViewChild, Output, Input, EventEmitter, OnChanges, ChangeDetectorRef } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 
 import { DilaogExampleComponent } from 'src/app/dilaog-example/dilaog-example.component'
 import { PeriodicElement } from '../models/PeriodicElement';
-import {DilaogAddComponent} from 'src/app/dilaog-add/dilaog-add.component';
-
 import { MatDialog } from '@angular/material/dialog';
-import {  MatTable } from '@angular/material';
+
 /**
  * @title Table with pagination
  */
@@ -20,26 +18,28 @@ export class DataTable implements OnInit, OnChanges {
   @Input() data: PeriodicElement[];
   @Input() type: string;
   @Output() getNextPage: EventEmitter<number> = new EventEmitter<number>();
+  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
   item: string; 
   displayedColumns: string[] = ['No', 'Item', 'Type', 'Division', 'CAD_SME', 'Status', 'actions'];
   dataSource: MatTableDataSource<PeriodicElement>;
 
-  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
+  constructor(public dialog: MatDialog, public changeDetectorRefs: ChangeDetectorRef) { }
   
-  @ViewChild(MatTable,{static:true}) table: MatTable<any>;
   ngOnInit() {
     this.dataSource = new MatTableDataSource<PeriodicElement>(this.data);
     this.dataSource.paginator = this.paginator;
   }
 
   ngOnChanges(changes) {
-    this.dataSource = new MatTableDataSource<PeriodicElement>(this.data);
+    console.log('updateing', this.data);
+    if (this.dataSource) {
+      this.dataSource.data = this.data;
+    } else {
+      this.dataSource = new MatTableDataSource<PeriodicElement>(this.data);
+    }
+    this.changeDetectorRefs.detectChanges();
   }
-
-  constructor(public dialog: MatDialog) { }
-  
-
 
   openDialog(element: PeriodicElement) {
     this.dialog.open(DilaogExampleComponent, {
@@ -51,20 +51,9 @@ export class DataTable implements OnInit, OnChanges {
       }
     });
   }
-  openDialogg(){
-this.dialog.open(DilaogAddComponent,
-  {
-    panelClass: 'my-full-screen-dialog',
-      width: '1000px',
-      height: '500px',
-  })
-  }
 
   callNextPage() {
     this.getNextPage.emit(1);
   }
-  
-  
-  
 
 }

@@ -14,11 +14,7 @@ export class BackendService {
     return this._http.get<PeriodicElement[]>(this._backendUrl + "/items/" + page + "/" + itemType);
   }
 
-  private handleError<T>(operation = 'operation', result?: T) {
-    //console.log("error");
-    return null;
-}
-private log(message: string) {
-  //console.log("log");
-}
+  postRow(row: PeriodicElement): Observable<PeriodicElement> {
+    return this._http.post<PeriodicElement>(this._backendUrl + "/item", row);
+  }
 }
