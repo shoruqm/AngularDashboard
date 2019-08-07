@@ -37,6 +37,20 @@ export class AppComponent implements OnInit {
     )
   }
 
+  removeData(No: number){
+    console.log('delete', No);
+    this.service.deleteRow(No).subscribe(
+      id => {
+        this.data = this.data.filter((item) => {
+          return item.No != id;
+        });
+      },
+      err =>{
+        console.error(err);
+      }
+    )
+  }
+
   selectTrack(id: string) {
     this.selectedTrack = id;
     this.getData(this.selectedTrack);
@@ -65,8 +79,7 @@ export class AppComponent implements OnInit {
         if (row) {
           this.service.postRow(row).subscribe(
             item => {
-              this.data.push(item);
-              this.ref.detectChanges();
+              this.data = [...this.data, item];
             },
             err => {
               console.error(err);

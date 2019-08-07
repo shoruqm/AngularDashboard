@@ -17,4 +17,7 @@ export class BackendService {
   postRow(row: PeriodicElement): Observable<PeriodicElement> {
     return this._http.post<PeriodicElement>(this._backendUrl + "/item", row);
   }
+  deleteRow(No: number): Observable<number>{
+    return this._http.delete<number>(this._backendUrl + "/item/" + No);
+  }
 }

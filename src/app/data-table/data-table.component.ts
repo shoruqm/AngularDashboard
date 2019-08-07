@@ -18,10 +18,11 @@ export class DataTable implements OnInit, OnChanges {
   @Input() data: PeriodicElement[];
   @Input() type: string;
   @Output() getNextPage: EventEmitter<number> = new EventEmitter<number>();
+  @Output() deleteRow: EventEmitter<number> = new EventEmitter<number>();
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
   item: string; 
-  displayedColumns: string[] = ['No', 'Item', 'Type', 'Division', 'CAD_SME', 'Status', 'actions'];
+  displayedColumns: string[] = ['No', 'Item', 'Type', 'Division', 'CAD_SME', 'Status', 'actions','delete'];
   dataSource: MatTableDataSource<PeriodicElement>;
 
   constructor(public dialog: MatDialog, public changeDetectorRefs: ChangeDetectorRef) { }
@@ -54,6 +55,10 @@ export class DataTable implements OnInit, OnChanges {
 
   callNextPage() {
     this.getNextPage.emit(1);
+  }
+
+  removeData(No: number) {
+    this.deleteRow.emit(No);
   }
 
 }

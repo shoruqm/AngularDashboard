@@ -24,7 +24,7 @@
     <mat-icon mat-flat-button class="buttonBack" *ngIf="selectedTrack" (click)="unselectTrack()">arrow_back</mat-icon>
     <button mat-button (click)="openDialog()" mat-flat-button color="primary" class="addButton">Add Row</button>
   </div>
-  <app-data-table [type]="getTrackName()" [data]="data" (getNextPage)="getNextPage($event)"></app-data-table>
+  <app-data-table [type]="getTrackName()" [data]="data" (deleteRow)="removeData($event)" (getNextPage)="getNextPage($event)"></app-data-table>
 </ng-container>
 
 
