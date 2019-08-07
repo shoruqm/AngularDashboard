@@ -1,110 +1,96 @@
 <div mat-dialog-container >
-        <h2 mat-dialog-title> more info</h2>
-<table mat-table [dataSource]="elementData" style="width: 250%" >
+    <h2 mat-dialog-title>More Info</h2>
+    <div class="label">
+      <h4 > Description:</h4>
+      {{elementData.Description}}
+
+      <h4>Item:</h4>
+      {{elementData.Item}}
+
+      <h4>Impact Reamars Comments:</h4>
+      {{elementData.Impact_Reamars_Comments}}
+
+      <h4>Type:</h4>
+      {{elementData.Type}}
+
+      <h4>Division:</h4>
+      {{elementData.Division}}
+
+      <h4>Proponent:</h4>
+      {{elementData.Proponent}}
+
+      <h4>Is Proponent Involve:</h4>
+      {{elementData.is_Proponent_involve}}
+
+      <h4>Fund Source:</h4>
+      {{elementData.Fund_Source}}
+
+      <h4> CAD SME:</h4>
+      {{elementData.CAD_SME}}
+      
+      <h4> Theme:</h4>
+      {{elementData.Theme}}
+
+      <h4> Start:</h4>
+      {{elementData.start}}
+
+      <h4> End:</h4>
+      {{elementData.end}}
+      
+      <h4> Cost:</h4>
+      {{elementData.cost}}
+
+      <h4> NPV:</h4>
+      {{elementData.NPV}}
+
+      <h4> NPV Justification:</h4>
+      {{elementData.NPV_Justification}}
+
+      <h4> DT Item:</h4>
+      {{elementData.DT_Item}}
+
+      <h4> BP Item:</h4>
+      {{elementData.BP_Item}}
+
+      <h4> Demand:</h4>
+      {{elementData.Demand}}
+
+      <h4> Note:</h4>
+      {{elementData.Note}}
+
+      <h4> Status:</h4>
+      {{elementData.Status}}
+
+      <h4> Last Update:</h4>
+      {{elementData.Last_Update}}
+
+    </div>
+   
+    <div class="value">
     
-     <!-- desc Column -->
-     <ng-container matColumnDef="Description">
-            <th mat-header-cell *matHeaderCellDef> Description </th>
-            <td mat-cell *matCellDef="let element"> {{element.Description}} </td>
-          </ng-container>
-    
-     <!-- Impact_Reamars_Comments Column -->
-     <ng-container matColumnDef=" Impact_Reamars_Comments">
-            <th mat-header-cell *matHeaderCellDef>  Impact_Reamars_Comments </th>
-            <td mat-cell *matCellDef="let element"> {{element. Impact_Reamars_Comments}} </td>
-        </ng-container>
-
-        <!-- Proponent Column -->
-     <ng-container matColumnDef="Proponent">
-            <th mat-header-cell *matHeaderCellDef> Proponent </th>
-            <td mat-cell *matCellDef="let element"> {{element.Proponent}} </td>
-        </ng-container>
-
-         <!-- is_Proponent_involve Column -->
-     <ng-container matColumnDef="is_Proponent_involve">
-            <th mat-header-cell *matHeaderCellDef> is_Proponent_involve </th>
-            <td mat-cell *matCellDef="let element"> {{element.is_Proponent_involve}} </td>
-        </ng-container>
-        
-        <!-- Fund_Source Column -->
-     <ng-container matColumnDef="Fund_Source">
-            <th mat-header-cell *matHeaderCellDef> Fund_Source </th>
-            <td mat-cell *matCellDef="let element"> {{element.Fund_Source}} </td>
-        </ng-container>
-        
-         <!-- Theme Column -->
-     <ng-container matColumnDef="Theme">
-            <th mat-header-cell *matHeaderCellDef> Theme </th>
-            <td mat-cell *matCellDef="let element"> {{element.Theme}} </td>
-        </ng-container>
-        
-         <!-- start Column -->
-     <ng-container matColumnDef="start">
-            <th mat-header-cell *matHeaderCellDef> start </th>
-            <td mat-cell *matCellDef="let element"> {{element.start}} </td>
-        </ng-container>
-        
-         <!-- end Column -->
-     <ng-container matColumnDef="end">
-            <th mat-header-cell *matHeaderCellDef> end </th>
-            <td mat-cell *matCellDef="let element"> {{element.end}} </td>
-        </ng-container>
-
-        <!-- cost Column -->
-     <ng-container matColumnDef="cost">
-            <th mat-header-cell *matHeaderCellDef> cost </th>
-            <td mat-cell *matCellDef="let element"> {{element.cost}} </td>
-        </ng-container>
-
-             <!-- NPV Column -->
-     <ng-container matColumnDef="NPV">
-            <th mat-header-cell *matHeaderCellDef> NPV </th>
-            <td mat-cell *matCellDef="let element"> {{element.NPV}} </td>
-        </ng-container>
-
-           <!-- NPV_Justification Column -->
-     <ng-container matColumnDef="NPV_Justification">
-            <th mat-header-cell *matHeaderCellDef> NPV_Justification </th>
-            <td mat-cell *matCellDef="let element"> {{element.NPV_Justification}} </td>
-        </ng-container>
-
-          <!-- DT_Item Column -->
-     <ng-container matColumnDef="DT_Item">
-            <th mat-header-cell *matHeaderCellDef> DT_Item </th>
-            <td mat-cell *matCellDef="let element"> {{element.DT_Item}} </td>
-        </ng-container>
-
-          <!-- BP_Item Column -->
-     <ng-container matColumnDef="BP_Item">
-            <th mat-header-cell *matHeaderCellDef> BP_Item </th>
-            <td mat-cell *matCellDef="let element"> {{element.BP_Item}} </td>
-        </ng-container>
-
-        <!-- Demand Column -->
-     <ng-container matColumnDef="Demand">
-            <th mat-header-cell *matHeaderCellDef> Demand </th>
-            <td mat-cell *matCellDef="let element"> {{element.Demand}} </td>
-        </ng-container>
-
-         <!-- Note Column -->
-     <ng-container matColumnDef="Note">
-            <th mat-header-cell *matHeaderCellDef> Note </th>
-            <td mat-cell *matCellDef="let element"> {{element.Note}} </td>
-        </ng-container>
-
-         <!-- Update Column -->
-     <ng-container matColumnDef="Update">
-            <th mat-header-cell *matHeaderCellDef> Update </th>
-            <td mat-cell *matCellDef="let element"> {{element.Update}} </td>
-        </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumn"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumn;"></tr>
-</table>
-
+        <!--{{elementData.Item}}
+        {{elementData.Impact_Reamars_Comments}}
+        {{elementData.Type}}
+        {{elementData.Division}}
+        {{elementData.Proponent}}
+        {{elementData.is_Proponent_involve}}
+        {{elementData.Fund_Source}}
+        {{elementData.CAD_SME}}
+        {{elementData.Theme}}
+        {{elementData.start}}
+        {{elementData.end}}
+        {{elementData.cost}}
+        {{elementData.NPV}}
+        {{elementData.NPV_Justification}}
+        {{elementData.DT_Item}}
+        {{elementData.BP_Item}}
+        {{elementData.Demand}}
+        {{elementData.Note}}
+        {{elementData.Status}}
+        {{elementData.Last_Update}}-->
+    </div>
 </div>
-<div mat-dialog-actions>
-       
-       <button mat-raised-button matDialogClose>Cancel</button>
-      </div>
+<div mat-dialog-actions>       
+    <button mat-raised-button matDialogClose>Cancel</button>
+</div>
       

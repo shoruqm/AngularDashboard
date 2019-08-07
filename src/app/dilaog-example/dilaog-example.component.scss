@@ -1,5 +1,10 @@
 .my-full-screen-dialog .mat-dialog-container {
-    max-width: auto;
-    width: auto;
-    height:auto;
+  max-width: auto;
+  width: auto;
+  height:auto;
+
+  .value {
+    font-family: Roboto,"Helvetica Neue",sans-serif;
   }
+ 
+}
