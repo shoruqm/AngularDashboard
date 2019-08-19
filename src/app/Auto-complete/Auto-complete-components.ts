@@ -13,7 +13,7 @@ import { PeriodicElement } from '../models/PeriodicElement';
   styleUrls: ['Auto-complete-components.scss'],
 })
 export class AutocompleteFilterExample implements OnInit {
-  @Input() data: PeriodicElement[];
+  @Input() data: PeriodicElement[] = [];
   myControl = new FormControl();
   filteredOptions: Observable<string[]>;
 
@@ -29,11 +29,11 @@ export class AutocompleteFilterExample implements OnInit {
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
 
-    return this.data.filter((element) => {
+    return this.data ? this.data.filter((element) => {
       return element.Item.toLowerCase().includes(filterValue)
         // || element.type.toLowerCase().includes(filterValue);
     }).map((element) => {
       return element.Item;
-    });
+    }) : [];
   }
 }

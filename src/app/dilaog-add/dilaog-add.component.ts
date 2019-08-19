@@ -53,7 +53,6 @@ checked: Boolean
       this.dialogRef.close();
     }
   }
-  
 
 }
 
