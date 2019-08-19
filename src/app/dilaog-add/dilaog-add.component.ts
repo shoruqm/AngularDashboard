@@ -1,16 +1,15 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, Input } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { PeriodicElement } from '../models/PeriodicElement';
 
 @Component({
   selector: 'app-dilaog-add',
-  templateUrl: './dilaog-add.component.html',
+  templateUrl: './dilaog-add.component.html', 
   styleUrls: ['./dilaog-add.component.scss']
 })
 export class DilaogAddComponent implements OnInit {
 
   row: PeriodicElement;
-
   constructor( public dialogRef: MatDialogRef<DilaogAddComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) {
       if (data && data.Type) {
@@ -44,6 +43,9 @@ export class DilaogAddComponent implements OnInit {
   ngOnInit() {
   }
 
+@Input()
+checked: Boolean 
+
   close(submit = false) {
     if (submit) {
       this.dialogRef.close(this.row);
@@ -51,6 +53,7 @@ export class DilaogAddComponent implements OnInit {
       this.dialogRef.close();
     }
   }
+  
 
 }
 

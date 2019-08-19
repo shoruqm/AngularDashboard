@@ -12,7 +12,7 @@
   </mat-form-field>
 
   <mat-form-field>
-      <input matInput placeholder="Impact_Reamars_Comments" [(ngModel)]="row.Impact_Reamars_Comments" >
+      <input matInput placeholder="Impact Reamars Comments" [(ngModel)]="row.Impact_Reamars_Comments" >
     </mat-form-field>
 
   <mat-form-field>
@@ -23,28 +23,38 @@
       <input matInput placeholder="Proponent" [(ngModel)]="row.Proponent" >
   </mat-form-field>
 
-  <mat-form-field>
-      <input matInput placeholder="is_Proponent_involve" [(ngModel)]="row.is_Proponent_involve" >
-  </mat-form-field>
+    <div><label>is Proponent involve </label></div>
+    <mat-radio-group [(ngModel)]="row.is_Proponent_involve">
+        <mat-radio-button [value]="true">Yes</mat-radio-button>
+        <mat-radio-button [value]="false">No</mat-radio-button>
+    </mat-radio-group>
+    <!-- <input matInput placeholder="is Proponent involve" [(ngModel)]="row.is_Proponent_involve" >-->
 
   <mat-form-field>
-      <input matInput placeholder="Fund_Source" [(ngModel)]="row.Fund_Source" >
+      <input matInput placeholder="Fund Source" [(ngModel)]="row.Fund_Source" >
   </mat-form-field>
  
   <mat-form-field>
-      <input matInput placeholder="CAD_SME" [(ngModel)]="row.CAD_SME" >
+      <input matInput placeholder="CAD SME" [(ngModel)]="row.CAD_SME" >
   </mat-form-field>
 
   <mat-form-field>
       <input matInput placeholder="Theme" [(ngModel)]="row.Theme" >
   </mat-form-field>  
 
-  <mat-form-field>
-      <input matInput placeholder="start" [(ngModel)]="row.start" >
-  </mat-form-field>  
+
+    <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Start" [(ngModel)]="row.start">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+      <!--<input matInput placeholder="start" [(ngModel)]="row.start" >-->
+
 
   <mat-form-field>
-      <input matInput placeholder="end" [(ngModel)]="row.end" >
+
+    
+      <!----><input matInput placeholder="end" [(ngModel)]="row.end" >
   </mat-form-field> 
 
   <mat-form-field>
@@ -56,15 +66,15 @@
   </mat-form-field> 
 
   <mat-form-field>
-      <input matInput placeholder="NPV_Justification" [(ngModel)]="row.NPV_Justification" >
+      <input matInput placeholder="NPV Justification" [(ngModel)]="row.NPV_Justification" >
   </mat-form-field> 
 
   <mat-form-field>
-      <input matInput placeholder="DT_Item" [(ngModel)]="row.DT_Item" >
+      <input matInput placeholder="DT Item" [(ngModel)]="row.DT_Item" >
   </mat-form-field> 
 
   <mat-form-field>
-      <input matInput placeholder="BP_Item" [(ngModel)]="row.BP_Item" >
+      <input matInput placeholder="BP Item" [(ngModel)]="row.BP_Item" >
   </mat-form-field> 
 
   <mat-form-field>
@@ -80,7 +90,7 @@
   </mat-form-field> 
 
   <mat-form-field>
-      <input matInput placeholder="Last_Update" [(ngModel)]="row.Last_Update" >
+      <input matInput placeholder="Last Update" [(ngModel)]="row.Last_Update" >
   </mat-form-field> 
 </div>
 

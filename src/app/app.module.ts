@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DataTable } from "src/app/data-table/data-table.component";
@@ -18,7 +17,9 @@ import { MatInputModule } from '@angular/material';
 import { SearchPipePipe } from './search-pipe.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { DilaogAddComponent } from './dilaog-add/dilaog-add.component';
-
+import {MatRadioModule} from '@angular/material/radio';
+import { MatDatepickerModule,
+  MatNativeDateModule,} from '@angular/material';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +44,10 @@ import { DilaogAddComponent } from './dilaog-add/dilaog-add.component';
     MatSortModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    MatRadioModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
